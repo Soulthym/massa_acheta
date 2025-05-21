@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+APPDIR="$HOME/apps"
+mkdir -p $APPDIR &> /dev/null
+DESTDIR="$APPDIR/massa_acheta"
+
+pushd $DESTDIR &> /dev/null
 
 echo -n "Enter your Telegram bot API Token and press Enter (Ctrl+C to quit): "
 read NEW_KEY
@@ -26,3 +31,5 @@ echo "Printing your new .env file:"
 echo "###"
 cat ./.env
 echo "###"
+
+popd &> /dev/null

@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
-
-DESTDIR="massa_acheta"
-
+APPDIR="$HOME/apps"
+mkdir -p $APPDIR &> /dev/null
+DESTDIR="$APPDIR/massa_acheta"
 
 function rollback {
     sudo systemctl stop massa_acheta.service &> /dev/null
     sudo systemctl disable massa_acheta.service &> /dev/null
 
-    cd ~
-    rm -rf ~/massa_acheta &> /dev/null
+    rm -rf $DESTDIR &> /dev/null
 
     sudo rm /etc/systemd/system/massa_acheta.service &> /dev/null
     sudo systemctl daemon-reload &> /dev/null
@@ -23,13 +22,14 @@ if [[ $? -ne 0 ]]
 then
     echo
     echo "Error: this installation uses Ubuntu-compatible commands and cannot be used in other Linux distros."
-    echo "You can try to install service manually using this scenario: https://github.com/dex2code/massa_acheta/"
+    echo "You can try to install service manually using this scenario: https://github.com/Soulthym/massa_acheta/"
+    popd &> /dev/null
     exit 1
 fi
 
 
 
-cd ~
+pushd $APPDIR &> /dev/null
 clear
 echo
 echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
@@ -43,7 +43,7 @@ echo ":::##:::: ##: ##:::: ##:. ######::. ######:: ##:::: ##::"
 echo "::..:::::..::..:::::..:::......::::......:::..:::::..:::"
 echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
 echo
-echo "[ MASSA 🦗 Acheta Telebot ] -- https://github.com/dex2code/massa_acheta/"
+echo "[ MASSA 🦗 Acheta Telebot ] -- https://github.com/Soulthym/massa_acheta/"
 echo
 echo "This script will configure your system and install all neccessary software:"
 echo "  - python3"
@@ -51,7 +51,7 @@ echo "  - python3-venv"
 echo "  - python3-pip"
 echo "  - git"
 echo
-echo "New Python virtual environment will be deployed in '$HOME/$DESTDIR' and new systemd unit 'massa_acheta.service' will be created."
+echo "New Python virtual environment will be deployed in '$DESTDIR' and new systemd unit 'massa_acheta.service' will be created."
 echo -n "If you are ok with this please hit Enter, otherwise Ctrl+C to quit the installation... "
 read _
 sudo echo
@@ -70,6 +70,7 @@ then
 else
     echo
     echo "‼ Some error occured. Please check your settings."
+    popd &> /dev/null
     exit 1
 fi
 
@@ -81,6 +82,7 @@ then
 else
     echo
     echo "‼ Some error occured. Please check your settings."
+    popd &> /dev/null
     exit 1
 fi
 
@@ -91,7 +93,7 @@ echo -n " → Ready to clone repo to download service software. Press Enter to c
 read _
 echo
 
-git clone https://github.com/dex2code/massa_acheta.git
+git clone https://github.com/Soulthym/massa_acheta.git
 if [[ $? -eq 0 ]]
 then
     echo "✅ Repo cloned successfully!"
@@ -100,6 +102,7 @@ else
     echo
     echo "‼ Some error occured. Please check your settings."
     rollback
+    popd &> /dev/null
     exit 1
 fi
 
@@ -110,7 +113,7 @@ echo -n " →  Ready to create and configure Python virtual environment. Press E
 read _
 echo
 
-echo -n "Creating Python venv in $HOME/$DESTDIR... "
+echo -n "Creating Python venv in $DESTDIR... "
 cd $DESTDIR && python3 -m venv .
 if [[ $? -eq 0 ]]
 then
@@ -119,6 +122,7 @@ else
     echo
     echo "‼ Some error occured. Please check your settings."
     rollback
+    popd &> /dev/null
     exit 1
 fi
 
@@ -131,6 +135,7 @@ else
     echo
     echo "‼ Some error occured. Please check your settings."
     rollback
+    popd &> /dev/null
     exit 1
 fi
 
@@ -149,6 +154,7 @@ else
     echo
     echo "‼ Some error occured. Please check your settings."
     rollback
+    popd &> /dev/null
     exit 1
 fi
 
@@ -167,6 +173,7 @@ else
     echo
     echo "‼ Some error occured. Please check your settings."
     rollback
+    popd &> /dev/null
     exit 1
 fi
 
@@ -183,6 +190,7 @@ else
     echo
     echo "‼ Some error occured. Please check your settings."
     rollback
+    popd &> /dev/null
     exit 1
 fi
 
@@ -195,6 +203,7 @@ else
     echo
     echo "‼ Some error occured. Please check your settings."
     rollback
+    popd &> /dev/null
     exit 1
 fi
 
@@ -211,5 +220,5 @@ echo "Please note if you watch remote MASSA node you MUST open firewall on your 
 echo "You can do it with command 'sudo ufw allow 33035/tcp'. If your firewall is closed for 33035/tcp port - your node will be unavailable for monitoring service."
 echo "You don't need to open firewall if you watch localhost (127.0.0.1)."
 echo
-echo "More information here: https://github.com/dex2code/massa_acheta/"
+echo "More information here: https://github.com/Soulthym/massa_acheta/"
 echo

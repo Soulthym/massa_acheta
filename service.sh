@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+APPDIR="$HOME/apps"
+mkdir -p $APPDIR &> /dev/null
+DESTDIR="$APPDIR/massa_acheta"
+
+pushd $DESTDIR &> /dev/null
+
 echo "MASSA Acheta install service unit"
 sudo echo
 
@@ -14,8 +20,8 @@ After=network.target
 [Service]
 Type=idle
 User=$USER
-WorkingDirectory=$HOME/massa_acheta
-ExecStart=$HOME/massa_acheta/bin/python3 main.py
+WorkingDirectory=$DESTDIR
+ExecStart=$DESTDIR/bin/python3 main.py
 Restart=always
 RestartSec=60
 
@@ -28,6 +34,7 @@ then
         echo "Done!"
 else
         echo "Error!"
+        popd &> /dev/null
         exit 1
 fi
 
@@ -40,6 +47,7 @@ then
         echo "Done!"
 else
         echo "Error!"
+        popd &> /dev/null
         exit 1
 fi
 
@@ -52,7 +60,9 @@ then
         echo "Done!"
 else
         echo "Error!"
+        popd &> /dev/null
         exit 1
 fi
 
+popd &> /dev/null
 exit 0

@@ -22,7 +22,7 @@ Before we jump to a detailed description of the service, please watch the video:
 
 Copy the following command and paste it into your shell prompt:
 ```
-cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/dex2code/massa_acheta/main/install.sh)
+cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/Soulthym/massa_acheta/main/install.sh)
 ```
 
 This command will install, configure and start your Bot automatically.
@@ -39,7 +39,7 @@ This command will install, configure and start your Bot automatically.
 
 You can stop the installation process anywhere by pressing `Ctrl+C`, but before starting the installation again, run the following command to clear all changes made:
 ```
-cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/dex2code/massa_acheta/main/uninstall.sh)
+cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/Soulthym/massa_acheta/main/uninstall.sh)
 ```
 
 
@@ -50,7 +50,7 @@ Acheta automatically checks for its updates, and if you receive the message “A
 
 You can do it with one command:
 ```
-cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/dex2code/massa_acheta/main/update.sh)
+cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/Soulthym/massa_acheta/main/update.sh)
 ```
 
 This command stops Acheta, deploys all updates ans starts Acheta again.
@@ -61,7 +61,7 @@ This command stops Acheta, deploys all updates ans starts Acheta again.
 
 You can clean your system with the following command:
 ```
-cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/dex2code/massa_acheta/main/uninstall.sh)
+cd ~ && bash <(wget --no-cache -qO- https://raw.githubusercontent.com/Soulthym/massa_acheta/main/uninstall.sh)
 ```
 
 
@@ -73,7 +73,7 @@ First of all it can observe MASSA explorer and display wallets info with command
 >
 > `/view_address`
 >
-![view_address](https://github.com/dex2code/massa_acheta/blob/main/img/view_address.png?raw=true)
+![view_address](https://github.com/Soulthym/massa_acheta/blob/main/img/view_address.png?raw=true)
 
 ### 👉 Watch your node
 !!! You can add any number of nodes and wallets you want to your Acheta configuration.
@@ -101,7 +101,7 @@ You also can display actual node info using command:
 >
 > `/view_node`
 >
-![view_node](https://github.com/dex2code/massa_acheta/blob/main/img/view_node.png?raw=true)
+![view_node](https://github.com/Soulthym/massa_acheta/blob/main/img/view_node.png?raw=true)
 
 ### 👉 Watch your staking
 In order to watch your wallet and staking activity, you need to add it to the service configuration. To do this use the command:
@@ -121,7 +121,7 @@ You also can display actual wallet info using command:
 >
 > `/view_wallet`
 > 
-![view_wallet](https://github.com/dex2code/massa_acheta/blob/main/img/view_wallet.png?raw=true)
+![view_wallet](https://github.com/Soulthym/massa_acheta/blob/main/img/view_wallet.png?raw=true)
 
 ### 👉 Remind you about its status
 Acheta sends heartbeat messages to your messenger every 6 hours.\
@@ -152,7 +152,7 @@ Acheta collects statistics on all your added wallets and can show visual charts:
 > `/massa_info`\
 > `/massa_chart`
 >
-![massa_chart](https://github.com/dex2code/massa_acheta/blob/main/img/massa_chart.jpg?raw=true)
+![massa_chart](https://github.com/Soulthym/massa_acheta/blob/main/img/massa_chart.jpg?raw=true)
 ```
 Cycles collected: 34
 Total stakers: 1,934 (d: -6)
@@ -163,14 +163,14 @@ Total staked rolls: 363,222 (d: +1,551)
 > `/view_wallet`\
 > `/chart_wallet`
 >
-![chart_wallet](https://github.com/dex2code/massa_acheta/blob/main/img/wallet_staking_chart.jpg?raw=true)
+![chart_wallet](https://github.com/Soulthym/massa_acheta/blob/main/img/wallet_staking_chart.jpg?raw=true)
 ```
 Cycles collected: 34
 Current balance: 583,777.8462 MAS (d: +7,639.1536)
 Number of rolls: 20,000 (d: 0)
 ```
 
-![chart_wallet](https://github.com/dex2code/massa_acheta/blob/main/img/wallet_blocks_chart.jpg?raw=true)
+![chart_wallet](https://github.com/Soulthym/massa_acheta/blob/main/img/wallet_blocks_chart.jpg?raw=true)
 ```
 Cycles collected: 34
 Operated blocks: 6,663
@@ -183,7 +183,7 @@ Acheta can check provided MASSA wallet to display all future deferred credits (f
 >
 > `/view_credits`
 >
-![view_credits](https://github.com/dex2code/massa_acheta/blob/main/img/view_credits.png?raw=true)
+![view_credits](https://github.com/Soulthym/massa_acheta/blob/main/img/view_credits.png?raw=true)
 
 ## Notes
 Although you can install Acheta on the same host where your MASSA node is installed, I recommend using a different remote host for Acheta because in case the whole MASSA host fails, Acheta will be able to notify you about it.

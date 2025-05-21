@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+APPDIR="$HOME/apps"
+mkdir -p $APPDIR &> /dev/null
+DESTDIR="$APPDIR/massa_acheta"
+
 echo "MASSA Acheta update service"
 sudo echo
 
@@ -10,10 +14,11 @@ then
 else
     echo
     echo "‼ Some error occured. Please check your settings."
+    popd &> /dev/null
     exit 1
 fi
 
-cd ~/massa_acheta
+pushd $DESTDIR &> /dev/null
 if [[ $? -eq 0 ]]
 then
     echo "✅ Ready to update"
@@ -21,6 +26,7 @@ then
 else
     echo
     echo "‼ Some error occured. Please check your settings."
+    popd &> /dev/null
     exit 1
 fi
 
@@ -32,6 +38,7 @@ then
 else
     echo
     echo "‼ Some error occured. Please check your settings."
+    popd &> /dev/null
     exit 1
 fi
 
@@ -43,7 +50,9 @@ then
 else
     echo
     echo "‼ Some error occured. Please check your settings."
+    popd &> /dev/null
     exit 1
 fi
 
+popd &> /dev/null
 exit 0
