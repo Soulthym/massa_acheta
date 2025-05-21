@@ -113,7 +113,7 @@ async def delete_node(message: Message, state: FSMContext) -> None:
                 "⚠ Try again later or watch logs to check the reason - ",
                 TextLink(
                     "More info here",
-                    url="https://github.com/dex2code/massa_acheta/"
+                    url="https://github.com/Soulthym/massa_acheta/"
                 )
             )
         )

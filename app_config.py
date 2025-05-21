@@ -22,10 +22,10 @@ app_config['service']['http_session_timeout_sec'] = 300
 app_config['service']['http_probe_timeout_sec'] = 120
 
 app_config['service']['massa_release_url'] = "https://api.github.com/repos/massalabs/massa/releases/latest"
-app_config['service']['acheta_release_url'] = "https://api.github.com/repos/dex2code/massa_acheta/releases/latest"
+app_config['service']['acheta_release_url'] = "https://api.github.com/repos/Soulthym/massa_acheta/releases/latest"
 
 app_config['service']['mainnet_rpc_url'] = "https://mainnet.massa.net/api/v2"
 app_config['service']['mainnet_explorer_url'] = "https://explorer.massa.net/mainnet"
-app_config['service']['massexplo_api_url'] = "https://api.massexplo.io/info?network=MainNet"
+app_config['service']['massexplo_api_url'] = "https://api.massexplo.com/info?network=MainNet"
 
 app_config['service']['mainnet_stakers_bundle'] = 1000

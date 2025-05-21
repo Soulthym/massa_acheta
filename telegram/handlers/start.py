@@ -44,7 +44,7 @@ async def cmd_start(message: Message) -> None:
                 "👉 ",
                 TextLink(
                     "More info here",
-                    url="https://github.com/dex2code/massa_acheta/"
+                    url="https://github.com/Soulthym/massa_acheta/"
                 )
             ),
             as_line(
@@ -101,7 +101,7 @@ async def cmd_start(message: Message) -> None:
                 "👉 ",
                 TextLink(
                     "More info here",
-                    url="https://github.com/dex2code/massa_acheta/"
+                    url="https://github.com/Soulthym/massa_acheta/"
                 )
             ),
             as_line(

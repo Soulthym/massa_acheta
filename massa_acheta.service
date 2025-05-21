@@ -1,3 +1,4 @@
+
 [Unit]
 Description=MASSA Acheta
 Wants=network.target
@@ -5,11 +6,12 @@ After=network.target
 
 [Service]
 Type=idle
-User=$USER
-WorkingDirectory=$HOME/massa_acheta
-ExecStart=$HOME/massa_acheta/bin/python3 main.py
+User=half-red
+WorkingDirectory=/mnt/half-red/home/half-red/apps/massa_acheta
+ExecStart=/mnt/half-red/home/half-red/apps/massa_acheta/bin/python3 main.py
 Restart=always
 RestartSec=60
 
 [Install]
 WantedBy=multi-user.target
+

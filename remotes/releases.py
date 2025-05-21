@@ -75,7 +75,7 @@ async def acheta_release() -> None:
                     "⚠ Update your bot version - ",
                     TextLink(
                         "More info here",
-                        url="https://github.com/dex2code/massa_acheta/"
+                        url="https://github.com/Soulthym/massa_acheta/"
                     )
                 )
             )
